@@ -15,6 +15,7 @@
     bottom: 0;
     left: 0;
     width: 22px;
+    line-height: 0;
 }
 .editor .tool-bar img {
     cursor: pointer;
