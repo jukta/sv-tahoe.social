@@ -1,0 +1,87 @@
+/* rating */
+.rating {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    display: inline;
+}
+.rating > i.fa.fa-star {
+    display: inline-block;
+    position: relative;
+}
+.rating > i.fa.fa-star {
+    color: rgba(128,128,128,.2);
+}
+.rating > i.fa.fa-star.filled,
+.rating > i:hover:before, .rating > i:hover ~ i:before {
+    color: rgba(128,128,128,.7);
+}
+.rating > i {
+    cursor: pointer;
+}
+/* end rating */
+
+.social-comment {
+    display: inline-block;
+    position: relative;
+    height: ${r};
+    padding: 0 ${padd};
+    text-align: center;
+    background-color: ${bg.sysInvert};
+    border-radius: ${bord.r3};
+    color: ${colWhite};
+    line-height: ${r};
+    font-size: ${font.small};
+    ${font.sys}
+    cursor: pointer;
+}
+.social-comment svg {
+    position: absolute;
+    top: ${r};
+    left: ${r06};
+    height: ${r06};
+    width: ${r08};
+}
+.social-comment svg polygon {
+    color: ${bg.sysInvert};
+    fill: ${bg.sysInvert};
+}
+/* tags */
+.tags {
+    margin: 0;
+}
+.tags a {
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-right: 0.5em;
+    cursor: pointer;
+}
+.tags-editor {
+    margin: ${marg} 0;
+    text-align: left;
+}
+.tags-editor .new-tag {
+    margin: ${marg07} 0;
+    padding: 0 ${padd};
+    vertical-align: top;
+}
+.tags-editor .tw {
+    display: inline-block;
+    margin: ${marg05} ${marg01} ${marg05} ${marg05};
+    white-space: nowrap;
+}
+.tags-editor .tb {
+    display: inline-block;
+    max-width: 10rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 0 ${padd01} ${padd03} ${padd05};
+}
+.tags-editor span .fa.fa-times {
+    display: inline-block;
+    padding: ${padd06} ${padd04};
+    cursor: pointer;
+    vertical-align: top;
+}

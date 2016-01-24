@@ -1,0 +1,101 @@
+SV.controller('editor', function(el) {
+
+    $(".tool-bar, .buttons-bar").hide();
+
+    var id = $(el).attr("id");
+
+    var self = this;
+
+    var article = $(el).find(".edit-area")[0];
+    var container = article.parentNode;
+
+    var medium = new Medium({
+        element: article,
+        mode: Medium.richMode,
+        attributes: null,
+        tags: null,
+        pasteAsText: false
+    });
+
+    article.highlight = function () {
+        if (document.activeElement !== article) {
+            medium.select();
+        }
+    };
+
+    $(el).focusin(function(e) {
+        $(el).find("span").hide();
+    });
+
+    $(el).focusout(function(e) {
+        if ($(article).text().trim() == "")
+            $(el).find("span").show();
+    });
+
+    $(el).click(function(e) {
+        var val = $.selection('html');
+        if (val && val!="" && document.activeElement == article) {
+            var tb = $(el).find(".tool-bar");
+            tb.css({top: event.pageY, left: event.pageX});
+            tb.show();
+        } else {
+            $(el).find(".tool-bar").hide();
+        }
+    });
+
+    $(el).find(".edit-area").change(function() {
+        SV.fire(el, id, self);
+    });
+
+    this.getHtml = function() {
+        var p = $(el).find(".edit-area").html();
+//        return p.replace(/<\/div>/g, "\n").replace(/<div>/g, "").replace(/<br>/g, "\n");
+        return p;
+    };
+
+    this.getText = function() {
+        return $(el).find(".edit-area").text();
+    };
+
+    container.querySelector('.strongButt').onmousedown = function() {
+        article.highlight();
+        medium.invokeElement('strong', {});
+        $(el).find(".tool-bar").hide();
+        return false;
+    };
+
+    container.querySelector('.codeButt').onmousedown = function() {
+        article.highlight();
+        medium.invokeElement('code', {});
+        $(el).find(".tool-bar").hide();
+        return false;
+    };
+
+    container.querySelector('.citeButt').onmousedown = function() {
+        article.highlight();
+        medium.invokeElement('cite', {});
+        $(el).find(".tool-bar").hide();
+        return false;
+    };
+
+    container.querySelector('.imgButt').onmousedown = function() {
+        article.highlight();
+        var val = window.getSelection();
+        medium.invokeElement('img',{
+            src:val, alt:"alt"
+        });
+        $(el).find(".tool-bar").hide();
+        return false;
+    };
+
+    container.querySelector('.linkButt').onmousedown = function() {
+        article.highlight();
+        var val = window.getSelection();
+        medium.invokeElement('a',{
+            href:val
+        });
+        $(el).find(".tool-bar").hide();
+        return false;
+    };
+
+});

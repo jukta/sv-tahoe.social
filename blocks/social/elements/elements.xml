@@ -1,0 +1,40 @@
+<sv:root xmlns:sv="http://svsoft.net/tahoe/schema">
+
+    <sv:block name="rating">
+        <div class="rating" sv-controller="rating">
+            <sv:script>
+                var rate = parseInt(attrs.rate);
+                attrs.rateArr = {};
+                for (var i = 4; i >= 0; i--) {
+                    var c = (rate > i*20+9) ? "filled" : "";
+                    attrs.rateArr[4-i] = {i: i, c: c};
+                }
+            </sv:script>
+            <sv:for var="j" in="${rateArr}">
+                <i sv-click="star" i="${j.i}" class="fa fa-star ${j.c}"></i>
+            </sv:for>
+        </div>
+    </sv:block>
+
+    <sv:block name="comment">
+        <strong class="social-comment" title="количество комментариев к записи"><svg width="8px" height="6px"><polygon points="2,0 8,0 0,6"/></svg>${num}</strong>
+    </sv:block>
+
+    <sv:block name="tags">
+        <p class="tags" sv-controller="tags">
+            <sv:for var="i" in="${tags}">
+                <a href="#" sv-click="tag">${i}</a>
+            </sv:for>
+        </p>
+    </sv:block>
+
+    <sv:block name="tags-editor">
+        <div class="tags-editor" sv-controller="tags-editor">
+            <sv:for var="i" in="${tags}">
+                <span class='tw'><span class='tb'>${i}</span><i class='fa fa-times'></i></span>
+            </sv:for>
+            <input class="new-tag" name="new-tag" type="text" placeholder="Your tag"></input>
+        </div>
+    </sv:block>
+
+</sv:root>
