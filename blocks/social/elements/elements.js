@@ -10,7 +10,7 @@ SV.controller('tags-editor', function(el) {
             var input = $(el).find('.new-tag');
             var value = input.val();
             input.val("");
-            var t = $("<span class='tw'><span class='tb'>"+value+"</span><i class='fa fa-times'></i></span>");
+            var t = $("<span class='tw'><span class='tb'>"+value+"</span><span class='ti'>&amp;times;</span></span>");
             input.before(t);
 
             t.click(function() {

@@ -1,0 +1,183 @@
+<sv:root xmlns:sv="E:\SANDBOX\repos\jukta-org\sv-tahoe\schema.xsd" pref="lc"
+         xmlns:be="http://www.w3.org/1999/xhtml">
+
+    <sv:import prefix="be" file="base/elements"/>
+    <sv:import prefix="bl" file="base/layouts"/>
+    <sv:import prefix="bls" file="base/layouts/split-layout"/>
+    <sv:import prefix="soc" file="social/components/editor"/>
+    <sv:import prefix="se" file="social/elements"/>
+    <sv:import prefix="sc" file="social/components/comments"/>
+
+    <sv:block name="test-page">
+
+        <be:doctype/>
+        <be:html manifest="someManifest" class="test">
+            <sv:def name="head">
+                <script src="/javascripts/jquery.min.js"></script>
+                <script src="/javascripts/jquery.selection.js"></script>
+                <script src="/javascripts/rangy-core.js"></script>
+                <script src="/javascripts/rangy-classapplier.js"></script>
+                <script src="/javascripts/undo.js"></script>
+                <script src="/javascripts/medium.js"></script>
+                <link rel="stylesheet" href="/res.css"/>
+                <script src="/javascripts/sv.js"></script>
+                <script src="/javascripts/sv-http.js"></script>
+                <script src="/javascripts/sv-tahoe.js"></script>
+                <script src="/res-client.js"></script>
+                <script src="/res-schema-client.js"></script>
+                <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"/>
+            </sv:def>
+
+            <sv:def name="body" class="test">
+                <span class="cross-l">＋</span>
+                <div class="cross"></div>
+                <div style="width:748px;margin:0 auto;">
+
+                <bls:split>
+                    <sv:def name="left">
+                        Приволжское издательство выпускает книги с 1920 года.В основе нашей работы — уважение к потребностям и пожеланиям клиентов. Каждый заказ мы выполняем качественно и в оговоренные сроки.Обеспечиваем полный цикл производства полиграфической продукции — от набора текста до выпуска книги в свет.                    ООО "Приволжское издательство"                    Саратов, ул. Киселева, 65Е, тел. 8(8452)275626                    Набор текста, редактирование, корректорская правка, разработка, дизайн оригинал-макета и обложки, создание, подбор и обработка иллюстраций и фото, верстка, типографские услуги.
+                    </sv:def>
+                    <sv:def name="right">
+                        Приволжское издательство выпускает книги с 1920 года.В основе нашей работы — уважение к потребностям и пожеланиям клиентов. Каждый заказ мы выполняем качественно и в оговоренные сроки.Обеспечиваем полный цикл производства полиграфической продукции — от набора текста до выпуска книги в свет.                    ООО "Приволжское издательство"                    Саратов, ул. Киселева, 65Е, тел. 8(8452)275626                    Набор текста, редактирование, корректорская правка, разработка, дизайн оригинал-макета и обложки, создание, подбор и обработка иллюстраций и фото, верстка, типографские услуги.
+                    </sv:def>
+                </bls:split>
+                <div sv-controller="ew">
+                    <div style="margin: 30px auto">
+                        <soc:editor id="123" class="some-editor">
+                        </soc:editor>
+                    </div>
+                    <sv:script>
+                        attrs.tags = {
+                        '0':'tag1tag1tag1tag1 tag1tag1 tag1',
+                        '1':'tag2',
+                        '2':'tag3',
+                        };
+                    </sv:script>
+                    <se:tags-editor tags="${tags}"/>
+                    <se:rating rate="20"/>
+                    <se:tags tags="${tags}"/>
+                    <sv:script>
+                        attrs.comments = {
+                            "0" : {author: "pupkin", text: "Привет!!!", date: ""},
+                            "1" : {author: "pupkin", text: "Привет!!!", date: ""},
+                            "2" : {author: "pupkin", text: "Привет!!!", date: ""},
+                            "3" : {author: "pupkin", text: "Привет!!!", date: ""},
+                        }
+                    </sv:script>
+                    <div class="section-p">
+                        <pre class="lang lang-js"><code>
+SV.controller('rating', function(el) {
+    this.on = {};
+    this.on["star"] = function(e, next) {
+        var i = $(e.target).attr("i");
+        SV.fire(el, "rating", {rate:20+i*20});
+    };
+});
+                        </code></pre>
+                    </div>
+                    <sc:comments data="${comments}"/>
+                    <form>
+                        <fieldset>
+                            <legend><h3>Форма</h3></legend>
+                            <div class="lb-group light full-width rm">
+                                <div class="f-group full-width">
+                                    <be:select class="select full-width">
+                                        <div class="f-group full-width">
+                                            <be:option value="s1">f-group full-width select .full-width f-group full-width option1</be:option>
+                                            <be:option value="s2" selected="true">f-group full-width select .full-width f-group full-width  option2 selected</be:option>
+                                            <be:option value="s3">f-group full-width select .full-width f-group full-width  option3</be:option>
+                                        </div>
+                                    </be:select>
+                                </div>
+                                <div class="f-group full-width confirm">
+                                    <be:select class="select full-width">
+                                        <be:option value="s1">f-group full-width confirm select .full-width option1</be:option>
+                                        <be:option value="s2" selected="true">f-group full-width confirm select .full-width option2 selected</be:option>
+                                        <be:option value="s3">f-group full-width confirm select .full-width option3</be:option>
+                                    </be:select>
+                                    <div class="confirm-box confirm-yes"></div>
+                                </div>
+                                <div class="f-group confirm">
+                                    <be:select class="select">
+                                        <be:option value="s1">f-group confirm select option1</be:option>
+                                        <be:option value="s2" selected="true">f-group confirm select .option2 selected</be:option>
+                                        <be:option value="s3">f-group confirm select option3</be:option>
+                                    </be:select>
+                                    <div class="confirm-box confirm-no"></div>
+                                </div>
+                                <div class="f-group">
+                                    <be:select class="select">
+                                        <be:option value="s1">sel1</be:option>
+                                        <be:option value="s2" selected="true">sel2</be:option>
+                                        <be:option value="s3">sel3</be:option>
+                                    </be:select>
+                                </div>
+                            </div>
+                            <div class="lb-group light full-width rm">
+                                <be:checkbox id="123" checked="true">
+                                    label here
+                                </be:checkbox>
+                                <be:radio id="id1" group="name1" value="value1">label 1</be:radio>
+                                <be:radio id="id2" group="name1" value="value2" checked="true">label 2</be:radio>
+                                <be:radio id="id3" group="name1" value="value3">label 3</be:radio>
+                            </div>
+                            <div class="lb-group light full-width rm">
+                                <be:button>Отмена</be:button>
+                                <be:button class="submit disable">Недоступно</be:button>
+                                <be:button class="submit">Отправить</be:button>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+
+                    <div class="e2 red">
+                        <div class="adv"></div>
+                        <div class="cont">Тег <code>input</code> является одним из разносторонних элементов формы и позволяет создавать разные элементы интерфейса и обеспечить взаимодействие с пользователем. Главным образом <code>input</code> предназначен для создания текстовых полей</div>
+                    </div>
+                    <div class="no-bkg">
+                    <div class="e2r fl green">
+                        <div class="adv"><img src="image/1.jpg"/></div>
+                        <div class="cont">Тег <code>input</code> является одним из разносторонних элементов формы и позволяет создавать разные элементы интерфейса и обеспечить взаимодействие с пользователем. Главным образом <code>input</code> предназначен для создания текстовых полей, различных кнопок, переключателей и флажков. Хотя элемент <code>input</code> не требуется помещать внутрь контейнера <code>form</code>, определяющего форму, но если введенные пользователем данные должны быть отправлены на сервер, где их обрабатывает серверная программа, то указывать <code>form</code> обязательно. То же самое обстоит и в случае обработки данных с помощью клиентских приложений, например, скриптов на языке JavaScript.</div>
+                    </div>
+                    <div class="e2r green">
+                        <div class="adv"><img src="image/1.jpg"/></div>
+                        <div class="cont">Rules are directly applied to <code>&amp;lt;iframe&amp;gt;</code>, <code>&amp;lt;embed&amp;gt;</code>, <code>&amp;lt;video&amp;gt;</code>, and <code>&amp;lt;object&amp;gt;</code> elements; optionally use an explicit descendant class <code>.embed-responsive-item</code> when you want to match the styling for other attributes.</div>
+                    </div>
+                </div>
+                <div class="e2 fl red">
+                        <div class="adv"></div>
+                        <div class="cont">определяющего форму, но если введенные пользователем данные должны быть отправлены на сервер, где их обрабатывает серверная программа, то указывать <code>form</code> обязательно.</div>
+                    </div>
+                </div>
+            </sv:def>
+        </be:html>
+
+    </sv:block>
+
+    <sv:block name="t1">
+        <!--${qwe.qwe1}-->
+        hello
+    </sv:block>
+
+    <sv:block name="t0">
+        <lc:t1/>
+        { [Error: ENOENT: no such file or directory, open 'e:\SANDBOX\repos\jukta-org\test\internal\socket_list.js']
+        errno: -4058,
+        code: 'ENOENT',
+        syscall: 'open',
+        path: 'e:\\SANDBOX\\repos\\jukta-org\\test\\internal\\socket_list.js' }
+        { [Error: ENOENT: no such file or directory, open 'e:\SANDBOX\repos\jukta-org\test\internal\cluster.js']
+        errno: -4058,
+        code: 'ENOENT',
+        syscall: 'open',
+        path: 'e:\\SANDBOX\\repos\\jukta-org\\test\\internal\\cluster.js' }
+    </sv:block>
+
+
+    <sv:block name="test-page1" data-handler="error">
+        <sv:include name="${block}"></sv:include>
+    </sv:block>
+
+</sv:root>
+
+

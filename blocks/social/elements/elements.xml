@@ -31,7 +31,7 @@
     <sv:block name="tags-editor">
         <div class="tags-editor" sv-controller="tags-editor">
             <sv:for var="i" in="${tags}">
-                <span class='tw'><span class='tb'>${i}</span><i class='fa fa-times'></i></span>
+                <span class='tw'><span class='tb'>${i}</span><span class='ti'>&amp;times;</span></span>
             </sv:for>
             <input class="new-tag" name="new-tag" type="text" placeholder="Your tag"></input>
         </div>

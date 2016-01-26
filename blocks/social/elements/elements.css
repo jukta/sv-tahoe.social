@@ -51,11 +51,16 @@
 }
 .tags a {
     display: inline-block;
-    text-overflow: ellipsis;
     white-space: nowrap;
+    text-overflow: ellipsis;
     overflow: hidden;
-    margin-right: 0.5em;
+    max-width: 5em;
+    margin: 0;
+    padding: 2px .5em 3px .5em;
     cursor: pointer;
+}
+.tags a:hover {
+    max-width: none;
 }
 .tags-editor {
     margin: ${marg} 0;
@@ -68,20 +73,35 @@
 }
 .tags-editor .tw {
     display: inline-block;
-    margin: ${marg05} ${marg01} ${marg05} ${marg05};
     white-space: nowrap;
+    margin: 0;
+    padding: 1px .5em 1px .5em;
+    border: 1px solid transparent;
+    border-radius: .3em;
 }
-.tags-editor .tb {
+.tags-editor .tw:hover,.tags-editor .tw:focus {
+    border: 1px dashed rgba(255,0,0,.3);
+}
+.tags-editor .tw .tb {
     display: inline-block;
-    max-width: 10rem;
+    max-width: 5em;
+    white-space: nowrap;
     text-overflow: ellipsis;
-    white-space: nowrap;
     overflow: hidden;
-    padding: 0 ${padd01} ${padd03} ${padd05};
+    vertical-align: middle;
 }
-.tags-editor span .fa.fa-times {
+.tags-editor .tw .ti {
     display: inline-block;
-    padding: ${padd06} ${padd04};
+    padding: 0 0 0 .1em;
+    font-family: monospace;
+    color: red;
     cursor: pointer;
-    vertical-align: top;
+}
+.tags-editor .tw:hover .tb {
+    max-width: none;
+    cursor: pointer;
+    text-decoration: line-through;
+}
+.tags-editor .tw:hover .ti, .tags-editor .tw .ti:hover {
+    font-weight: bold;
 }

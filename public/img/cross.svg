@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.0" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 22000 22000" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .fil0 {fill:none}
+    .fil1 {fill:#FF0000}
+   ]]>
+  </style>
+ </defs>
+  <g>
+   <rect class="fil0" width="22000" height="22000"/>
+   <path class="fil1" d="M6833 5090l4167 4167 4167 -4167c120,-121 317,-121 438,0l1305 1306c121,120 121,317 0,437l-4167 4167 4167 4167c121,121 121,317 0,438l-1305 1306c-121,120 -318,120 -438,0l-4167 -4167 -4167 4167c-120,120 -317,120 -438,0l-1305 -1306c-121,-121 -121,-317 0,-438l4167 -4167 -4167 -4167c-121,-120 -121,-317 0,-437l1305 -1306c121,-121 318,-121 438,0z"/>
+  </g>
+</svg>

@@ -6,7 +6,6 @@
     z-index: -1;
 }
 .editor .edit-area {
-    width: 100%;
     margin-left: 20px;
     /*-webkit-user-modify: read-write;*/
 }
