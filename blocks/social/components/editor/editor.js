@@ -4,6 +4,23 @@ SV.controller('editor', function(el) {
     var range = null;
     this.on = {};
 
+    ta.on('paste', function (e) {
+        var _e = e.originalEvent;
+        if (_e.clipboardData && _e.clipboardData.getData('text/html') != "") {
+            e.preventDefault();
+            return false;
+        }
+        if (window.clipboardData) {
+            e.preventDefault();
+            return false;
+        }
+    });
+
+    ta.bind('dragover drop', function(event){
+        event.preventDefault();
+        return false;
+    });
+
     this.on["strong"] = function(e, next) {
         p(ta[0], {range: range}, function(text) {
             return "<strong>" + text + "</strong>";
@@ -59,47 +76,46 @@ SV.controller('editor', function(el) {
         $(window).on("mouseup", function() {
             $(window).unbind("mouseup");
             range = window.getSelection().getRangeAt(0);
-//            var tb = $(el).find(".tool-bar");
-//            tb.css({top: event.pageY-$(ta).offset().top});
-//            $(tb).animate({top: event.pageY-$(ta).offset().top}, 300, function() {
-//            });
-//            tb.show();
         });
     });
 
-//    $(ta).on("mousemove", function() {
-//        var tb = $(el).find(".tool-bar");
-//            tb.css({top: event.pageY-$(ta).offset().top});
-//    });
+    var goTopEl = function(el) {
+        if (el.parentNode !== ta[0])
+            return goTopEl(el.parentNode);
+        return el;
+    };
+
+    var remove = function(el, cont, offset, a) {
+        if (el.data && el.data === cont.data) {
+            a.fl = !a.fl;
+            el.data = a.fl ? el.data.substr(0, offset) : el.data.substr(offset);
+        } else if (el.childNodes.length == 0 && a.fl) {
+            el.parentNode.removeChild(el);
+        } else {
+            for (var i = 0; i < el.childNodes.length; i++) {
+                remove(el.childNodes[i], cont, offset, a);
+            }
+        }
+    };
 
     var p = function(e, pos, h) {
         var pl = range.toString();
-        var t = range.startContainer.data;
-        var st = range.startOffset;
-        var end = range.endOffset;
+        var st = null;
+        var end = null;
 
-        var t0 = t.substr(0, st);
-        var t1 = "__$$$__";
-        if (t.length > end) {
-            var t2 = t.substr(end);
-            var clone = range.startContainer.cloneNode(true);
-            range.startContainer.parentNode.insertBefore(clone, range.startContainer);
-            clone.data = t0;
-            range.startContainer.data = t2;
-            var _pl = $(h(pl))[0];
-            range.startContainer.parentNode.insertBefore(_pl, range.startContainer);
-//            t1 += t2;
+        if (range.startContainer === range.endContainer) {
+            end = goTopEl(range.startContainer);
+            st = end.cloneNode(true);
+            e.insertBefore(st, end);
+        } else {
+            st = goTopEl(range.startContainer);
+            end = goTopEl(range.endContainer);
         }
 
-//        if (range.startContainer !== range.endContainer) {
-//            t = range.endContainer.data;
-//            range.endContainer.data = t.substr(end);
-//        }
-
-//        range.startContainer.data = t0+t1;
-//        var html = $(e).html();
-//        html = html.replace("__$$$__", "<strong>" + pl + "</strong>");
-//        $(e).html(html);
+        remove(st, range.startContainer, range.startOffset, {fl:false});
+        remove(end, range.endContainer, range.endOffset, {fl:true});
+        var _pl = $(h(pl))[0];
+        e.insertBefore(_pl, end);
     };
 
 });
