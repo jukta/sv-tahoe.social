@@ -6,13 +6,13 @@ SV.controller('editor', function(el) {
 
     ta.on('paste', function (e) {
         var _e = e.originalEvent;
-        if (_e.clipboardData && _e.clipboardData.getData('text/html') != "") {
-            e.preventDefault();
-            return false;
-        }
+        e.preventDefault();
         if (window.clipboardData) {
-            e.preventDefault();
-            return false;
+            var content = window.clipboardData.getData('Text');
+            document.selection.createRange().pasteHTML(content);
+        } else {
+            var content = _e.clipboardData.getData('text/plain');
+            document.execCommand('insertText', false, content);
         }
     });
 
