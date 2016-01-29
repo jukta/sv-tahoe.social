@@ -25,6 +25,30 @@ label.radio,label.checkbox {margin: 0 1em 0 0;}
 .no-bkg div {background-image: none!important;}
 .e2 div:first-child,.e2r div:first-child {background-image: url("image/1.jpg");background-repeat: no-repeat;background-size: contain;}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*test page*/
 .cross-l{position:fixed;height:5%;width:20px;z-index:0;top:50%;left:0%;margin:-19px 0 0 -10px;padding:0 10px 0 0;font-size:30px;cursor:pointer;}
 .cross{position:fixed;height:100%;width:100%;z-index:0;top:0;left:-100%;display:none;}

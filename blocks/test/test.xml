@@ -11,7 +11,7 @@
     <sv:block name="test-page">
 
         <be:doctype/>
-        <be:html manifest="someManifest" class="test">
+        <be:html manifest="someManifest" class="">
             <sv:def name="head">
                 <script src="/javascripts/jquery.min.js"></script>
                 <script src="/javascripts/jquery.selection.js"></script>
