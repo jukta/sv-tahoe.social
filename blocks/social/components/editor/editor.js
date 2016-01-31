@@ -22,19 +22,19 @@ SV.controller('editor', function(el) {
     });
 
     this.on["strong"] = function(e, next) {
-        p(ta[0], {range: range}, function(text) {
+        block(ta[0], {range: range}, function(text) {
             return "<strong>" + text + "</strong>";
         });
     };
 
     this.on["img"] = function(e, next) {
-        p(ta[0], {range: range}, function(text) {
+        block(ta[0], {range: range}, function(text) {
             return "<img src='" + text + "'/>";
         });
     };
 
     this.on["code"] = function(e, next) {
-        p(ta[0], {range: range}, function(text) {
+        block(ta[0], {range: range}, function(text) {
             return "<pre>" + text + "</pre>";
         });
     };
@@ -63,7 +63,7 @@ SV.controller('editor', function(el) {
                 return false;
             });
         };
-        p(ta[0], {range: range}, function(text) {
+        block(ta[0], {range: range}, function(text) {
             var _el = $(el).find(".link-form-wrp").clone();
             _el.find(".link-form [name='name']").val(text);
             $(ta).attr("contenteditable", "false");
@@ -98,7 +98,7 @@ SV.controller('editor', function(el) {
         }
     };
 
-    var p = function(e, pos, h) {
+    var block = function(e, pos, h) {
         var pl = range.toString();
         var st = null;
         var end = null;
@@ -116,6 +116,18 @@ SV.controller('editor', function(el) {
         remove(end, range.endContainer, range.endOffset, {fl:true});
         var _pl = $(h(pl))[0];
         e.insertBefore(_pl, end);
+    };
+
+    var inline = function(h) {
+        var pl = range.toString();
+        var st = null;
+        var end = null;
+
+        if (range.startContainer === range.endContainer) {
+            end = goTopEl(range.startContainer);
+            st = end.cloneNode(true);
+            e.insertBefore(st, end);
+        }
     };
 
 });
