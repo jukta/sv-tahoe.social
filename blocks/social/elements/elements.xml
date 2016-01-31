@@ -1,5 +1,28 @@
 <sv:root xmlns:sv="http://svsoft.net/tahoe/schema">
 
+    <sv:import prefix="be" file="base/elements"/>
+
+    <sv:block name="avatar">
+        <div class="avatar">
+            <div>
+                <img src="${img}"/>
+            </div>
+        </div>
+    </sv:block>
+
+    <sv:block name="author">
+        <be:button class="author link">${_name}</be:button>
+    </sv:block>
+
+    <sv:block name="date">
+        <sv:script>
+            attrs.format = function(date) {
+                return "2 дня";
+            }
+        </sv:script>
+        <span class="date">${format( date )}</span>
+    </sv:block>
+
     <sv:block name="rating">
         <div class="rating" sv-controller="rating">
             <sv:script>

@@ -2,31 +2,19 @@
 
     <sv:import prefix="bl" file="base/layouts"/>
     <sv:import prefix="be" file="base/elements"/>
-
-    <sv:block name="avatar">
-        <div class="avatar">
-            <div>
-                <img src="${img}"/>
-            </div>
-        </div>
-    </sv:block>
+    <sv:import prefix="se" file="social/elements"/>
 
     <sv:block name="reply">
-        <sv:script>
-            attrs.format = function(date) {
-            return "2 дня";
-            }
-        </sv:script>
         <div id="${data.id}" class="reply">
             <bl:grid-layout class="full-width" cols="2">
                 <bl:cell class="avatar">
-                    <lc:avatar img="http://ca0.ru/png/avatar.png" nick=""/>
+                    <se:avatar img="http://ca0.ru/png/avatar.png" nick=""/>
                 </bl:cell>
                 <bl:cell>
                     <bl:ver-layout class="spacing">
                         <bl:cell>
-                            <be:button class="author link">${data.author}</be:button>
-                            <span class="date">${format( data.date )}</span>
+                            <se:author _name="${data.author}"/>
+                            <se:date date="data.date"/>
                         </bl:cell>
                         <bl:cell>
                             ${data.text}
@@ -44,22 +32,17 @@
     </sv:block>
 
     <sv:block name="comment">
-        <sv:script>
-            attrs.format = function(date) {
-            return "2 дня";
-            }
-        </sv:script>
         <div id="${data.id}" class="comment">
 
             <bl:grid-layout class="full-width" cols="2">
                 <bl:cell class="avatar">
-                    <lc:avatar img="http://ca0.ru/png/avatar.png" nick=""/>
+                    <se:avatar img="http://ca0.ru/png/avatar.png" nick=""/>
                 </bl:cell>
                 <bl:cell>
                     <bl:ver-layout class="spacing">
                         <bl:cell>
-                            <be:button class="author link">${data.author}</be:button>
-                            <span class="date">${format( data.date )}</span>
+                            <se:author _name="${data.author}"/>
+                            <se:date date="data.date"/>
                         </bl:cell>
                         <bl:cell>
                             ${data.text}
@@ -90,7 +73,7 @@
                 <bl:cell>
                     <bl:grid-layout class="full-width" cols="2">
                         <bl:cell class="avatar">
-                            <lc:avatar img="http://ca0.ru/png/avatar.png"/>
+                            <se:avatar img="http://ca0.ru/png/avatar.png"/>
                         </bl:cell>
                         <bl:cell>
                             <be:textarea placeholder="add your comment">${to}</be:textarea>

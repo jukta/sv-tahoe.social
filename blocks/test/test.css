@@ -25,6 +25,13 @@ label.radio,label.checkbox {margin: 0 1em 0 0;}
 .no-bkg div {background-image: none!important;}
 .e2 div:first-child,.e2r div:first-child {background-image: url("image/1.jpg");background-repeat: no-repeat;background-size: contain;}
 
+.panel {
+    vertical-align: top;
+}
+
+.panel .panel-body {
+    padding: 0 1em 2em 1em;
+}
 
 
 

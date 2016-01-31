@@ -7,6 +7,8 @@
     <sv:import prefix="soc" file="social/components/editor"/>
     <sv:import prefix="se" file="social/elements"/>
     <sv:import prefix="sc" file="social/components/comments"/>
+    <sv:import prefix="sp" file="social/components/panel"/>
+    <sv:import prefix="spt" file="social/components/post"/>
 
     <sv:block name="test-page">
 
@@ -31,7 +33,10 @@
             <sv:def name="body" class="test">
                 <span class="cross-l">＋</span>
                 <div class="cross"></div>
-                <div style="width:748px;margin:0 auto;">
+                <div style="width:748px;margin:0 auto; display: inline-block; margin: 0 5em">
+                    <sp:panel title="Hello there">
+
+
 
                 <bls:split>
                     <sv:def name="left">
@@ -48,6 +53,7 @@ SV.controller('rating', function(el) {
                         The controller determines the number of rankings. Displayed in a graphical symbol the stars.
                     </sv:def>
                 </bls:split>
+
                 <div sv-controller="ew">
                     <div style="margin: 30px auto">
                         <soc:editor id="123" class="some-editor">
@@ -63,14 +69,6 @@ SV.controller('rating', function(el) {
                     <se:tags-editor tags="${tags}"/>
                     <se:rating rate="20"/>
                     <se:tags tags="${tags}"/>
-                    <sv:script>
-                        attrs.comments = {
-                            "0" : {author: "pupkin", text: "Привет!!!", date: ""},
-                            "1" : {author: "pupkin", text: "Привет!!!", date: ""},
-                            "2" : {author: "pupkin", text: "Привет!!!", date: ""},
-                            "3" : {author: "pupkin", text: "Привет!!!", date: ""},
-                        }
-                    </sv:script>
                     <div class="section-p">
                         <pre class="lang lang-js"><code>
 SV.controller('rating', function(el) {
@@ -82,7 +80,7 @@ SV.controller('rating', function(el) {
 });
                         </code></pre>
                     </div>
-                    <sc:comments data="${comments}"/>
+                    <sc:comments/>
                     <form>
                         <fieldset>
                             <legend><h3>Форма</h3></legend>
@@ -155,6 +153,13 @@ SV.controller('rating', function(el) {
                         <div class="adv"></div>
                         <div class="cont">определяющего форму, но если введенные пользователем данные должны быть отправлены на сервер, где их обрабатывает серверная программа, то указывать <code>form</code> обязательно.</div>
                     </div>
+
+                </sp:panel>
+                </div>
+                <div style="width:748px;margin:0 auto; display: inline-block; margin: 0 5em; vertical-align: top;">
+                    <sp:panel title="Hello there">
+                        <spt:post data="1"/>
+                    </sp:panel>
                 </div>
             </sv:def>
         </be:html>

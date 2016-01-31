@@ -1,0 +1,63 @@
+.panel {
+    position: relative;
+}
+.panel-head {}
+.panel-title {
+    display: inline-block;
+    padding-left: 1em;
+}
+.panel-tools {
+    float: right;
+}
+.panel-tools a {
+    display: inline-block;
+    height: 1em;
+    width: 1em;
+    text-align: center;
+    text-decoration: none;
+}
+.panel-tools a:after {
+    content: '−';
+}
+.panel-tools a.collapse-on:after {
+    content: '+';
+}
+.panel-body {
+    position: relative;
+}
+
+
+.panel-title {
+    color: #1C304A;
+}
+.panel-tools a:hover {
+    color: #FFFFFF;
+}
+.panel-tools a {
+    background-color: transparent;
+}
+.panel-tools a:hover {
+    background-color: hsl(227,31%,60%);
+}
+.panel-head {
+    border-bottom: .2rem solid hsl(227,6%,79%);
+}
+.panel-tools a {
+    border-radius: .2rem;
+    border: .1rem solid hsl(227,2%,93%);
+    color: hsl(227,6%,79%);
+}
+.panel-tools a:hover {
+    border-color: transparent;
+}
+.panel-body {
+    border-bottom: .1rem solid hsl(227,0%,70%);
+}
+.panel-title,
+.panel-tools {
+    /*font-family: "Exo 2","Open Sans",Ubuntu,Tahoma,Verdana,Arial,sans-serif;*/
+    /*font-weight: 600;*/
+}
+.panel-title {
+    font-weight: 200;
+}

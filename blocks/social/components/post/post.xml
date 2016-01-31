@@ -1,0 +1,30 @@
+<sv:root xmlns:sv="http://svsoft.net/tahoe/schema" xmlns="http://www.w3.org/1999/xhtml">
+
+    <sv:import prefix="se" file="social/elements"/>
+    <sv:import prefix="be" file="base/elements"/>
+    <sv:import prefix="scc" file="social/components/comments"/>
+
+    <sv:block name="post" data-handler="post-get">
+        <div class="post" sv-controller="post">
+
+            <div class="side-meta">
+                <se:rating rate="${post.rate}"/>
+                <se:author _name="${post.author}"/>
+            </div>
+
+            <div class="title">
+                <div class="img"><img src="http://ca0.ru/png/avatar.png"/></div>
+                <div class="label"><h2>${post.title}</h2></div>
+            </div>
+            <div class="content">
+                ${post.content}
+            </div>
+            <hr/>
+            <se:date date="${post.date}"/>
+            <se:tags tags="${post.tags}"/>
+
+            <scc:comments/>
+        </div>
+    </sv:block>
+
+</sv:root>
