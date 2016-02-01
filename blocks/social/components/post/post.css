@@ -7,22 +7,6 @@
 }
 
 .post .title {
-    position: relative;
-    min-height: 70px;
 }
 
-.post .title .img {
-    position: absolute;
-    width: 70px;
-    height: 70px;
-}
-.post .title .img img {
-    width: 70px;
-    height: 70px;
-}
-
-.post .title .label {
-    margin-left: 70px;
-    line-height: 70px;
-}
 

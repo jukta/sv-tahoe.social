@@ -13,12 +13,9 @@
                 <se:author _name="${post.author}"/>
             </div>
 
-            <sl:pair class="title" style='background-image:url(http://ca0.ru/png/avatar.png);'>
-                <sv:def name="fixed">.
-                </sv:def>
-                <sv:def name="block">
-                    <h2>${post.title}</h2>
-                </sv:def>
+            <sl:pair>
+                <h2>${post.title}</h2>
+                <div class="side" style='background-image:url(http://ca0.ru/png/avatar.png);'></div>
             </sl:pair>
             <div class="content">
                 ${post.content}

@@ -1,11 +1,28 @@
-.pair,.pair.right {position: relative;}
-.pair .block,.pair.right .block {display: block;box-sizing: border-box;}
-.pair.fl .block,.pair.right.fl .block {margin: 0;}
-.pair .fixed,.pair.right .fixed {position: absolute;top: 0;left: 0;overflow: hidden;height: 100%;line-height: 0;}
-.pair.right .fixed {left: auto;right: 0;}
-.pair.fl .fixed,.pair.right.fl .fixed {position: relative;height: auto;line-height: 1;float: left;}
-.pair.right.fl .fixed {float: right;}
+/*.pair,.pair.right {position: relative;}*/
+/*.pair .block,.pair.right .block {display: block;box-sizing: border-box;}*/
+/*.pair.fl .block,.pair.right.fl .block {margin: 0;}*/
+/*.pair .fixed,.pair.right .fixed {position: absolute;top: 0;left: 0;overflow: hidden;height: 100%;line-height: 0;}*/
+/*.pair.right .fixed {left: auto;right: 0;}*/
+/*.pair.fl .fixed,.pair.right.fl .fixed {position: relative;height: auto;line-height: 1;float: left;}*/
+/*.pair.right.fl .fixed {float: right;}*/
 /* 2e M */
-.pair .block {margin: 0 0 0 5em;}/*${ML}*/
-.pair.right .block {margin: 0 5em 0 0;}/*${MR}*/
-.pair .fixed {width: 5em;}/*${ML MR}*/
+/*.pair .block {margin: 0 0 0 5em;}*//*${ML}*/
+/*.pair.right .block {margin: 0 5em 0 0;}*//*${MR}*/
+/*.pair .fixed {width: 5em;}*//*${ML MR}*/
+
+.pair {
+    position: relative;
+}
+
+.pair .side {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5em;
+    height: 100%;
+    margin: 0 !important;
+}
+
+.pair > * {
+    margin-left: 5em;
+}

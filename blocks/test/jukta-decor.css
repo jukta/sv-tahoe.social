@@ -191,11 +191,11 @@ form .confirm .confirm-box {
 .confirm-box.confirm-no:before {content: '!';background-color: #EF3020;padding: 0.1em 0.5em;font-weight: 900;}
 
 /* decor pair */
-.pair .fixed img,.pair.right .fixed img {height: 100%;width: auto;}
-.pair,.pair.right {margin: 1em;overflow: hidden;}
-.pair div:last-child,.pair.right div:last-child,.pair.fl div:first-child,.pair.right.fl div:first-child {padding: 1em;}
-.pair div:first-child,.pair div:last-child,.pair.right div:first-child,.pair.right div:last-child {background-color:white;}
+/*.pair .fixed img,.pair.right .fixed img {height: 100%;width: auto;}*/
+/*.pair, .pair.right {margin: 1em;overflow: hidden;}*/
+/*.pair div:last-child,.pair.right div:last-child,.pair.fl div:first-child,.pair.right.fl div:first-child {padding: 1em;}*/
+/*.pair div:first-child,.pair div:last-child,.pair.right div:first-child,.pair.right div:last-child {background-color:white;}*/
 /*for background*/
-.pair .fixed > div, .pair.right .fixed > div {height: 100%;}
-.no-bkg div {background-image: none!important;}
-.pair div:first-child,.pair.right div:first-child {background-repeat: no-repeat;background-size: contain;}
+/*.pair .fixed > div, .pair.right .fixed > div {height: 100%;}*/
+/*.no-bkg div {background-image: none!important;}*/
+.pair .side, .pair.right .side {background-repeat: no-repeat;background-size: contain;}

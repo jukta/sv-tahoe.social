@@ -2,15 +2,11 @@
 
     <sv:block name="pair">
         <sv:set name="class" value="" override="false"/>
-        <sv:set name="style" value="" override="false"/>
         <div class="pair ${class}">
-            <div class="fixed" style="${style}">
-                <sv:def name="fixed"/>
-            </div>
-            <div class="block">
-                <sv:def name="block"/>
-            </div>
+            <sv:def/>
         </div>
     </sv:block>
+
+
 
 </sv:root>
