@@ -3,6 +3,7 @@
     <sv:import prefix="se" file="social/elements"/>
     <sv:import prefix="be" file="base/elements"/>
     <sv:import prefix="scc" file="social/components/comments"/>
+    <sv:import prefix="sl" file="social/layouts"/>
 
     <sv:block name="post" data-handler="post-get">
         <div class="post" sv-controller="post">
@@ -12,10 +13,13 @@
                 <se:author _name="${post.author}"/>
             </div>
 
-            <div class="title">
-                <div class="img"><img src="http://ca0.ru/png/avatar.png"/></div>
-                <div class="label"><h2>${post.title}</h2></div>
-            </div>
+            <sl:pair class="title" style='background-image:url(http://ca0.ru/png/avatar.png);'>
+                <sv:def name="fixed">.
+                </sv:def>
+                <sv:def name="block">
+                    <h2>${post.title}</h2>
+                </sv:def>
+            </sl:pair>
             <div class="content">
                 ${post.content}
             </div>

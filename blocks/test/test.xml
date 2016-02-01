@@ -33,6 +33,11 @@
             <sv:def name="body" class="test">
                 <span class="cross-l">＋</span>
                 <div class="cross"></div>
+                <div style="width:748px;margin:0 auto; display: inline-block; margin: 0 5em; vertical-align: top;">
+                    <sp:panel title="Hello there">
+                        <spt:post data="1"/>
+                    </sp:panel>
+                </div>
                 <div style="width:748px;margin:0 auto; display: inline-block; margin: 0 5em">
                     <sp:panel title="Hello there">
 
@@ -155,11 +160,6 @@ SV.controller('rating', function(el) {
                     </div>
 
                 </sp:panel>
-                </div>
-                <div style="width:748px;margin:0 auto; display: inline-block; margin: 0 5em; vertical-align: top;">
-                    <sp:panel title="Hello there">
-                        <spt:post data="1"/>
-                    </sp:panel>
                 </div>
             </sv:def>
         </be:html>
