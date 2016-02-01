@@ -198,4 +198,4 @@ form .confirm .confirm-box {
 /*for background*/
 /*.pair .fixed > div, .pair.right .fixed > div {height: 100%;}*/
 /*.no-bkg div {background-image: none!important;}*/
-.pair .side, .pair.right .side {background-repeat: no-repeat;background-size: contain;}
+.pair .side, .pair.right .side {background-repeat: no-repeat;background-size:contain;}
