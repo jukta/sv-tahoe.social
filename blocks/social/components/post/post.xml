@@ -4,6 +4,7 @@
     <sv:import prefix="be" file="base/elements"/>
     <sv:import prefix="scc" file="social/components/comments"/>
     <sv:import prefix="sl" file="social/layouts"/>
+    <sv:import prefix="bl" file="base/layouts"/>
 
     <sv:block name="post" data-handler="post-get">
         <div class="post" sv-controller="post">
@@ -13,10 +14,18 @@
                 <se:author _name="${post.author}"/>
             </div>
 
-            <sl:pair>
-                <h2>${post.title}</h2>
-                <div class="side" style='background-image:url(http://ca0.ru/png/avatar.png);'></div>
-            </sl:pair>
+            <sl:h-layout class="spacing">
+                <bl:cell>
+                    <h2>${post.title}</h2>
+                </bl:cell>
+                <bl:cell class="full-width">
+                    hello
+                </bl:cell>
+                <bl:cell>
+                    hello
+                </bl:cell>
+            </sl:h-layout>
+
             <div class="content">
                 ${post.content}
             </div>
