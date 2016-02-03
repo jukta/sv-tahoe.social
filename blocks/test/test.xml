@@ -9,6 +9,7 @@
     <sv:import prefix="sc" file="social/components/comments"/>
     <sv:import prefix="sp" file="social/components/panel"/>
     <sv:import prefix="spt" file="social/components/post"/>
+    <sv:import prefix="sg" file="social/components/grid"/>
 
     <sv:block name="test-page">
 
@@ -35,13 +36,14 @@
                 <div class="cross"></div>
                 <div style="width:748px;margin:0 auto; display: inline-block; margin: 0 5em; vertical-align: top;">
                     <sp:panel title="Hello there">
-                        <spt:post data="1"/>
+                        <sg:grid/>
+
                     </sp:panel>
                 </div>
-                <div style="width:748px;margin:0 auto; display: inline-block; margin: 0 5em">
+                <div style=" width:748px;margin:0 auto; display: inline-block; margin: 0 5em; display: none;">
                     <sp:panel title="Hello there">
 
-
+                        <spt:post data="1"/>
 
                 <bls:split>
                     <sv:def name="left">

@@ -1,0 +1,34 @@
+<sv:root xmlns:sv="http://svsoft.net/tahoe/schema" xmlns="http://www.w3.org/1999/xhtml">
+
+    <sv:block name="grid">
+        <div class="grid" sv-controller="grid">
+            <div class="grid-header">
+                <div class="col-header">
+                    <div class="sort" sv-click="sort">col1</div>
+                </div>
+                <div class="col-header">
+                    <div class="sort" sv-click="sort">col2</div>
+                </div>
+                <div class="col-header">
+                    <div class="sort" sv-click="sort">col3</div>
+                </div>
+            </div>
+            <table class="table">
+                <col></col>
+                <col></col>
+                <col></col>
+                <tr>
+                    <td>Gecko</td>
+                    <td>Netscape Navigator 9</td>
+                    <td>Win 98+ / OSX.2+</td>
+                </tr>
+                <tr>
+                    <td>Gecko</td>
+                    <td>Mozilla 1.0</td>
+                    <td>Win 95+ / OSX.1+</td>
+                </tr>
+            </table>
+        </div>
+    </sv:block>
+
+</sv:root>

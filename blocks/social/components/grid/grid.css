@@ -1,0 +1,43 @@
+.grid * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.grid .grid-header {
+    position: relative;
+    height: 50px;
+}
+
+.grid .col-header {
+    position: absolute;
+    height: 50px;
+    border: 1px solid red;
+}
+
+.grid .col-header.active {
+    background-color: silver;
+}
+
+.grid .col-header .sort {
+    height: inherit;
+    margin-right: 6px;
+}
+
+.grid .col-header .sort.desc:after {
+    content: "▲";
+}
+
+.grid .col-header .sort.asc:after {
+    content: "▼";
+}
+
+.grid .col-header:hover {
+    cursor: col-resize;
+}
+
+.grid .col-header .sort:hover {
+    cursor: default;
+}
+
+
+
