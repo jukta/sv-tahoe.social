@@ -10,7 +10,7 @@
                 <img sv-click="img" src="img/img.svg"/>
                 <img sv-click="link" src="img/link.svg"/>
             </div>
-            <div class="edit-area user-text" contenteditable="true"><sv:def name="text"></sv:def></div>
+            <div class="edit-area user-text" contenteditable="true"><sv:def></sv:def></div>
             <div class="link-form-wrp" style="display:none">
                 <div class="link-form">
                     <input name="name" type="text"></input>
