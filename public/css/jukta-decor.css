@@ -22,7 +22,74 @@ tt,code,.code,kbd,samp {font-family: 'Ubuntu mono',Consolas,Menlo,Courier,monosp
 .bkg-silver {background-color:#BBBBBB;color:#1A314B;}
 .bkg-white {background-color:#FEFEFE;color:#1A314B;}
 .light {border:1px solid #CCCCCC;}
+body {background-color: #F3F3F3}
+h1,h2,h3,h4,h5,h6 {line-height: 150%;color: #56667A;}
+p {color: #1D314A;}
 
+/* panel */
+.panel {
+    position: relative;
+    width: 750px;
+    margin: 0 auto;
+    margin-left: 18px;
+    overflow: hidden;
+    vertical-align: top;
+}
+.panel .panel-body {
+    padding: 2em 27px;
+}
+.panel-head {
+    height: 36px;
+    margin-top: 18px;
+    border-bottom: 2px solid #8E99A6;
+}
+.panel-tools {
+    float: right;
+    position: relative;
+    z-index: 3;
+}
+.panel-tools {
+    line-height: 36px;
+}
+.panel-tools a {
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    margin-top: 9px;
+    font-size: 27px;
+    line-height: .62;
+    border-radius: 2px;
+    border: 1px solid #C7CCD3;
+    outline: none;
+    color: #8E99A6;
+    background-color: transparent;
+}
+.panel-tools a:hover {
+    border: 1px solid #56667A;
+    color: #1C304A;
+    background-color: #FFFFFF;
+}
+.panel-tools a:after {
+    content: '−';
+    height: 18px;
+    width: 18px;
+    text-align: center;
+}
+.panel-title {
+    display: inline-block;
+    padding-left: 9px;
+    line-height: 36px;
+    font-size: 19px;
+    font-weight: 100;
+    color: #56667A;
+}
+.panel-title strong {
+    padding: 0 .5em;
+}
+.panel-body {
+    background-color: #FFFFFF;
+}
 /* section */
 .section-p {padding: .1em 1em;background-color: rgb(239, 239, 239);}
 pre.lang {line-height: 1;}
@@ -50,36 +117,56 @@ form .full-width {
 button,
 .button {
     display: inline-block;
-    min-width: 5em;
-    padding: 0.1em 1em 0.3em 1em;
+    min-width: 6.2em;
+    margin: .62em;
+    padding: 0.1em 1em 0.2em 1em;
     line-height: 1.3em;
     font-size: 1em;
     border-radius: 0.2em;
     outline-style: none;
-    border: 1px solid #BBBBBB;
-    background-color: transparent;
+    border: 1px solid transparent;
+    background-color: #8E99A6;
+    color: #FFFFFF;
     cursor: pointer;
 }
 .button:hover {
-    background-color:#EEEEEE;
+    background-color: #56667A;
 }
-.button:active {
-    background-color:#DDDDDD;
+.button.minor {
+    background-color: transparent;
+    color: #8E99A6;
+    border: 1px solid #C6CCD2;
+}
+.button.minor:hover {
+    color: #324565;
+    border: 1px solid #8E99A6;
 }
 .button.disable {
     opacity: .5;
     cursor: not-allowed;
 }
+.button.disable:hover {
+    background-color: #8E99A6;
+}
 .button.submit{
     border: 1px solid transparent;
-    background-color:#7987B8;
+    background-color:#56667A;
     color:#FEFEFE;
 }
 .button.submit:hover {
-    background-color:#5E6F99;
-}
-.button.submit:active {
     background-color:#324565;
+}
+.button.submit:active,.button:active {
+    background-color:#FF7A00;
+}
+.button.accent {
+    background-color:#FF7A00;
+}
+.button.accent:hover {
+    background-color: #FF4D00;
+}
+.button.accent:active {
+    background-color:#990000;
 }
 
 /* select */
@@ -208,14 +295,14 @@ input[type="radio"],input[type="checkbox"] {vertical-align: -3px;-ms-transform: 
 label.radio,label.checkbox {margin: 0 1em 0 0;}
 /* 2e(lement) */ /*for img*/
 
-.panel {
-    vertical-align: top;
-}
-.panel .panel-body {
-    padding: 0 1em 2em 1em;
-}
+/* code */
 pre {
     display: block;
+}
+pre.code {
+    margin-left: 2em;
+    padding: .5em 1em;
+    background-color: #F1F3F8;
 }
 .code i {
     font-style: normal;
@@ -230,4 +317,28 @@ hr {
     height: 1px;
     border: none;
     background-color: silver;
+}
+h1 {
+    font-size: 48px;
+}
+h2 {
+    font-size: 36px;
+}
+h3 {
+    font-size: 32px;
+}
+h4 {
+    font-size: 28px;
+}
+h5 {
+    font-size: 24px;
+}
+h6 {
+    font-size: 21px;
+}
+p {
+    font-size: 14px;
+}
+h1,h2,h3,h4,h5,h6 {
+    line-height: 150%;
 }
