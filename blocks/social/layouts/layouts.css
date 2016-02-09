@@ -6,7 +6,6 @@
 .h-layout > .cell {
     display: table-cell;
     vertical-align: middle;
-    background: silver;
 }
 
 .h-layout.spacing > .cell {

@@ -1,7 +1,7 @@
 /* global */
 /*body,input,button {font-size: 14px;line-height: 1.3;}*/
 body,input,textarea,keygen, select,button {font-family: 'exo 2',sans-serif;line-height: 1.35;color: #1A314B;}
-tt,code,kbd,samp {font-family: 'Ubuntu mono',Consolas,Menlo,Courier,monospace;color: #006E30;}/*#00AD5C*/
+tt,code,.code,kbd,samp {font-family: 'Ubuntu mono',Consolas,Menlo,Courier,monospace;color: #006E30;}/*#00AD5C*/
 
 /* background + color */
 .bkg-jukta {background-color:rgba(121,135,184,1);}
@@ -51,7 +51,7 @@ button,
 .button {
     display: inline-block;
     min-width: 5em;
-    padding: 0.3em 1em;
+    padding: 0.1em 1em 0.3em 1em;
     line-height: 1.3em;
     font-size: 1em;
     border-radius: 0.2em;
@@ -199,3 +199,35 @@ form .confirm .confirm-box {
 /*.pair .fixed > div, .pair.right .fixed > div {height: 100%;}*/
 /*.no-bkg div {background-image: none!important;}*/
 .pair .side, .pair.right .side {background-repeat: no-repeat;background-size:contain;}
+
+.split {min-height: 10em;margin: 50px 0;}
+.some-editor > .edit-area {min-height: 5em;}
+.some-editor > .edit-area:focus,.some-editor > .edit-area:hover {outline:1px solid red;}
+
+input[type="radio"],input[type="checkbox"] {vertical-align: -3px;-ms-transform: scale(1.15,1.15);-webkit-transform: scale(1.15,1.15);transform: scale(1.15,1.15);margin: 0 .5em 0 0;}
+label.radio,label.checkbox {margin: 0 1em 0 0;}
+/* 2e(lement) */ /*for img*/
+
+.panel {
+    vertical-align: top;
+}
+.panel .panel-body {
+    padding: 0 1em 2em 1em;
+}
+pre {
+    display: block;
+}
+.code i {
+    font-style: normal;
+}
+.code i:before {
+    content: '<';
+}
+.code i:after {
+    content: '>';
+}
+hr {
+    height: 1px;
+    border: none;
+    background-color: silver;
+}
